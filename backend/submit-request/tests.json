@@ -7,14 +7,11 @@
       "expectedStatus": 200
     },
     {
-      "name": "Submit valid request",
+      "name": "Submit with phone only",
       "method": "POST",
       "path": "/",
       "body": {
-        "name": "Тест Тестов",
         "phone": "+79991234567",
-        "email": "test@test.ru",
-        "type": "Тимбилдинг",
         "message": "Тестовая заявка"
       },
       "expectedStatus": 200,
@@ -22,10 +19,10 @@
       "bodyMatcher": "partial"
     },
     {
-      "name": "Missing required fields",
+      "name": "Missing phone",
       "method": "POST",
       "path": "/",
-      "body": {"name": "Иван"},
+      "body": {"message": "Привет"},
       "expectedStatus": 400
     }
   ]

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/4d68f31b-99cc-4f9b-8baa-b1372ebb68a3/files/c3dfb52e-c1c7-47b5-ac70-a76c5a26fb2c.jpg";
+const HERO_IMAGE = "https://cdn.poehali.dev/files/80d2c61e-db87-4d54-8b02-52d06cb25743.jpg";
+const TRAINER_PHOTO = "https://cdn.poehali.dev/files/b74b9443-ddbf-4517-a073-fae0b0b70032.jpeg";
 const API_URL = "https://functions.poehali.dev/bf54092e-43e5-4114-9ade-aa9f3a5b54a2";
 
 const scenarios = [
@@ -47,12 +48,7 @@ const faqs = [
 export default function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [form, setForm] = useState({
-    name: "",
-    company: "",
     phone: "",
-    email: "",
-    type: "",
-    date: "",
     message: "",
   });
   const [submitting, setSubmitting] = useState(false);
@@ -189,23 +185,39 @@ export default function Index() {
 
       {/* ── ABOUT ── */}
       <section className="py-20 px-6" style={{ background: "var(--cream-dark)" }}>
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="section-label mb-4">О тренере</p>
-          <span className="leaf-divider mb-8 block" />
-          <h2
-            className="font-display text-4xl md:text-5xl font-light leading-snug mb-6"
-            style={{ color: "var(--green-deep)", fontStyle: "italic" }}
-          >
-            Практика как<br />часть вашего события
-          </h2>
-          <p className="text-lg leading-relaxed mb-4" style={{ color: "var(--stone)" }}>
-            Проводил практики на большинстве крупных российских фестивалей.
-            10+ лет личной практики йоги.
-          </p>
-          <p className="text-base leading-relaxed" style={{ color: "var(--stone)" }}>
-            Подстраиваюсь под аудиторию: работаю с новичками и опытными практиками,
-            с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
-          </p>
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-shrink-0">
+              <div
+                className="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden"
+                style={{ boxShadow: "0 8px 32px rgba(45,74,30,0.18)", border: "4px solid var(--green-pale)" }}
+              >
+                <img
+                  src={TRAINER_PHOTO}
+                  alt="Захаров Спартак Михайлович"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+            <div className="text-center md:text-left">
+              <p className="section-label mb-3">О тренере</p>
+              <h2
+                className="font-display text-4xl md:text-5xl font-light leading-snug mb-2"
+                style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+              >
+                Захаров Спартак<br />Михайлович
+              </h2>
+              <span className="leaf-divider md:ml-0 mb-5 block" style={{ margin: "12px 0" }} />
+              <p className="text-lg leading-relaxed mb-4" style={{ color: "var(--stone)" }}>
+                Проводил практики на большинстве крупных российских фестивалей.
+                10+ лет личной практики йоги.
+              </p>
+              <p className="text-base leading-relaxed" style={{ color: "var(--stone)" }}>
+                Подстраиваюсь под аудиторию: работаю с новичками и опытными практиками,
+                с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -242,89 +254,17 @@ export default function Index() {
               className="rounded-2xl p-8 md:p-10 flex flex-col gap-5"
               style={{ background: "white", boxShadow: "0 2px 20px rgba(45,74,30,0.08)" }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs font-semibold mb-1.5 tracking-wide uppercase" style={{ color: "var(--stone)" }}>
-                    Имя *
-                  </label>
-                  <input
-                    className="form-input"
-                    placeholder="Ваше имя"
-                    required
-                    value={form.name}
-                    onChange={e => setForm({ ...form, name: e.target.value })}
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold mb-1.5 tracking-wide uppercase" style={{ color: "var(--stone)" }}>
-                    Компания
-                  </label>
-                  <input
-                    className="form-input"
-                    placeholder="Необязательно"
-                    value={form.company}
-                    onChange={e => setForm({ ...form, company: e.target.value })}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs font-semibold mb-1.5 tracking-wide uppercase" style={{ color: "var(--stone)" }}>
-                    Телефон *
-                  </label>
-                  <input
-                    className="form-input"
-                    placeholder="+7 ..."
-                    required
-                    value={form.phone}
-                    onChange={e => setForm({ ...form, phone: e.target.value })}
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold mb-1.5 tracking-wide uppercase" style={{ color: "var(--stone)" }}>
-                    Email *
-                  </label>
-                  <input
-                    className="form-input"
-                    type="email"
-                    placeholder="your@email.com"
-                    required
-                    value={form.email}
-                    onChange={e => setForm({ ...form, email: e.target.value })}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs font-semibold mb-1.5 tracking-wide uppercase" style={{ color: "var(--stone)" }}>
-                    Тип мероприятия *
-                  </label>
-                  <select
-                    className="form-input"
-                    required
-                    value={form.type}
-                    onChange={e => setForm({ ...form, type: e.target.value })}
-                  >
-                    <option value="">Выберите...</option>
-                    <option>Тимбилдинг</option>
-                    <option>Праздник</option>
-                    <option>Фестиваль</option>
-                    <option>Другое</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold mb-1.5 tracking-wide uppercase" style={{ color: "var(--stone)" }}>
-                    Удобная дата
-                  </label>
-                  <input
-                    className="form-input"
-                    type="date"
-                    value={form.date}
-                    onChange={e => setForm({ ...form, date: e.target.value })}
-                  />
-                </div>
+              <div>
+                <label className="block text-xs font-semibold mb-1.5 tracking-wide uppercase" style={{ color: "var(--stone)" }}>
+                  Телефон *
+                </label>
+                <input
+                  className="form-input"
+                  placeholder="+7 ..."
+                  required
+                  value={form.phone}
+                  onChange={e => setForm({ ...form, phone: e.target.value })}
+                />
               </div>
 
               <div>
@@ -334,7 +274,7 @@ export default function Index() {
                 <textarea
                   className="form-input resize-none"
                   rows={4}
-                  placeholder="Расскажите о вашем мероприятии: место, количество гостей, пожелания..."
+                  placeholder="Расскажите о вашем мероприятии: формат, место, количество гостей, пожелания..."
                   value={form.message}
                   onChange={e => setForm({ ...form, message: e.target.value })}
                 />
