@@ -47,8 +47,7 @@ def handler(event: dict, context) -> dict:
 
     # Telegram уведомление
     bot_token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
-    # chat_id берём из env или используем @spartakmihailovich как fallback
-    chat_id = os.environ.get('TELEGRAM_CHAT_ID', '@spartakmihailovich')
+    chat_id = os.environ.get('TELEGRAM_CHAT_ID', '5958835146')
 
     lines = [
         f"🧘 *Новая заявка #{request_id}* — yogaevent.ru",
