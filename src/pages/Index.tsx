@@ -98,6 +98,18 @@ export default function Index() {
           />
         </div>
 
+        {/* Телефон в шапке */}
+        <div className="absolute top-0 left-0 right-0 z-20 flex justify-end px-6 pt-5">
+          <a
+            href="tel:+79969971527"
+            className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80"
+            style={{ color: "var(--cream)", background: "rgba(20,36,14,0.45)", backdropFilter: "blur(6px)", borderRadius: "999px", padding: "8px 18px", border: "1px solid rgba(255,255,255,0.15)" }}
+          >
+            <Icon name="Phone" size={14} />
+            +7 996 997 15 27
+          </a>
+        </div>
+
         <div className="relative z-10 max-w-3xl mx-auto px-6 py-32 text-center">
           <p className="section-label fade-up-delay-1 mb-5" style={{ color: "var(--green-pale)" }}>
             Корпоративная йога
@@ -183,40 +195,29 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── ABOUT ── */}
-      <section className="py-20 px-6" style={{ background: "var(--cream-dark)" }}>
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-shrink-0">
-              <div
-                className="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden"
-                style={{ boxShadow: "0 8px 32px rgba(45,74,30,0.18)", border: "4px solid var(--green-pale)" }}
+      {/* ── FESTIVALS ── */}
+      <section className="py-20 px-6" style={{ background: "var(--green-deep)" }}>
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="section-label mb-4" style={{ color: "var(--green-pale)" }}>Опыт</p>
+          <h2
+            className="font-display text-4xl md:text-5xl font-light mb-8"
+            style={{ color: "var(--cream)", fontStyle: "italic" }}
+          >
+            Крупнейшие российские фестивали
+          </h2>
+          <p className="text-base mb-8" style={{ color: "rgba(212,232,204,0.75)" }}>
+            Проводил практики на крупнейших российских фестивалях:
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {["Дикая Мята", "Йога Журнал — Равновесие", "Фестиваль Сказка", "Систо (Ленинградская обл.)", "Чилаут Пленет"].map((fest) => (
+              <span
+                key={fest}
+                className="text-sm font-medium px-5 py-2.5 rounded-full"
+                style={{ background: "rgba(255,255,255,0.1)", color: "var(--cream)", border: "1px solid rgba(255,255,255,0.18)" }}
               >
-                <img
-                  src={TRAINER_PHOTO}
-                  alt="Захаров Спартак Михайлович"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-            </div>
-            <div className="text-center md:text-left">
-              <p className="section-label mb-3">О тренере</p>
-              <h2
-                className="font-display text-4xl md:text-5xl font-light leading-snug mb-2"
-                style={{ color: "var(--green-deep)", fontStyle: "italic" }}
-              >
-                Захаров Спартак<br />Михайлович
-              </h2>
-              <span className="leaf-divider md:ml-0 mb-5 block" style={{ margin: "12px 0" }} />
-              <p className="text-lg leading-relaxed mb-4" style={{ color: "var(--stone)" }}>
-                Проводил практики на большинстве крупных российских фестивалей.
-                10+ лет личной практики йоги.
-              </p>
-              <p className="text-base leading-relaxed" style={{ color: "var(--stone)" }}>
-                Подстраиваюсь под аудиторию: работаю с новичками и опытными практиками,
-                с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
-              </p>
-            </div>
+                {fest}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -295,8 +296,56 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── ABOUT ── */}
       <section className="py-20 px-6" style={{ background: "var(--cream-dark)" }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-shrink-0">
+              <div
+                className="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden"
+                style={{ boxShadow: "0 8px 32px rgba(45,74,30,0.18)", border: "4px solid var(--green-pale)" }}
+              >
+                <img
+                  src={TRAINER_PHOTO}
+                  alt="Захаров Спартак Михайлович"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+            <div className="text-center md:text-left">
+              <p className="section-label mb-3">О тренере</p>
+              <h2
+                className="font-display text-4xl md:text-5xl font-light leading-snug mb-2"
+                style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+              >
+                Захаров Спартак<br />Михайлович
+              </h2>
+              <span className="leaf-divider md:ml-0 mb-5 block" style={{ margin: "12px 0" }} />
+              <p className="text-lg leading-relaxed mb-4" style={{ color: "var(--stone)" }}>
+                10+ лет личной практики йоги. Участник крупнейших российских фестивалей.
+              </p>
+              <p className="text-base leading-relaxed mb-5" style={{ color: "var(--stone)" }}>
+                Подстраиваюсь под аудиторию: работаю с новичками и опытными практиками,
+                с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
+              </p>
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                {["Дикая Мята", "Равновесие", "Сказка", "Систо", "Чилаут Пленет"].map((f) => (
+                  <span
+                    key={f}
+                    className="text-xs px-3 py-1.5 rounded-full"
+                    style={{ background: "var(--green-pale)", color: "var(--green-deep)", fontWeight: 500 }}
+                  >
+                    {f}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="py-20 px-6" style={{ background: "white" }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <p className="section-label mb-3">FAQ</p>
