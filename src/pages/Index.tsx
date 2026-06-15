@@ -109,7 +109,7 @@ export default function Index() {
             Йога на ваше<br />мероприятие
           </h1>
           <p
-            className="fade-up-delay-3 text-lg md:text-xl font-normal mb-10 max-w-xl mx-auto"
+            className="fade-up-delay-3 text-lg md:text-xl font-normal mb-6 max-w-xl mx-auto"
             style={{ color: "var(--stone)" }}
           >
             Приезжаю и провожу практику для гостей.<br />Любой формат, любая площадка.
@@ -118,17 +118,17 @@ export default function Index() {
             <button onClick={scrollToForm} className="btn-primary text-base px-8 py-4">
               Заказать йогу на мероприятие →
             </button>
-            <p style={{ color: "var(--stone)", fontSize: "14px", letterSpacing: "normal", marginTop: "8px" }}>
-              от 30 000 ₽ за выезд
+            <p style={{ color: "#8a8a7a", fontSize: "13px", marginTop: "8px", textAlign: "center" }}>
+              Стоимость обсуждается под ваш формат
             </p>
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-3 items-center"
+              className="flex flex-col sm:flex-row gap-2 items-center"
               style={{ marginTop: "12px" }}
             >
               <input
                 className="form-input"
-                style={{ width: "280px", height: "51px", padding: "12px 16px" }}
+                style={{ width: "280px", height: "48px", padding: "12px 16px" }}
                 placeholder="+7 ..."
                 required
                 value={form.phone}
@@ -138,12 +138,12 @@ export default function Index() {
                 type="submit"
                 disabled={submitting}
                 className="btn-primary"
-                style={{ width: "200px", height: "51px", opacity: submitting ? 0.7 : 1 }}
+                style={{ width: "180px", height: "48px", opacity: submitting ? 0.7 : 1 }}
               >
                 {submitting ? "Отправляю..." : "Отправить"}
               </button>
             </form>
-            <p style={{ color: "var(--stone)", fontSize: "16px", letterSpacing: "normal", marginTop: "16px" }}>
+            <p style={{ color: "var(--stone)", fontSize: "14px", marginTop: "10px" }}>
               10 лет преподавания · 8 фестивалей · 100+ мероприятий
             </p>
           </div>
@@ -215,6 +215,7 @@ export default function Index() {
             ))}
           </div>
         </div>
+        <div style={{ borderBottom: "1px solid rgba(45,74,30,0.1)" }} />
       </section>
 
       {/* ── WHAT YOGA GIVES ── */}
@@ -235,8 +236,8 @@ export default function Index() {
             ].map(({ step, title, text }) => (
               <div key={step} className="flex items-start gap-6">
                 <span
-                  className="text-xs font-semibold tracking-widest pt-1 flex-shrink-0 w-8"
-                  style={{ color: "var(--green-mid)" }}
+                  className="font-semibold tracking-widest pt-1 flex-shrink-0 w-8"
+                  style={{ color: "#2d4a1e", fontSize: "20px", fontWeight: 600 }}
                 >
                   {step}
                 </span>
