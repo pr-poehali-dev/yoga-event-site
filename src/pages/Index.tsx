@@ -320,14 +320,8 @@ export default function Index() {
                 Работаю с новичками и опытными практиками, с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
               </p>
               <p
-                className="leading-relaxed"
-                style={{ color: "#8a8a7a", fontSize: "14px", fontStyle: "italic", marginTop: "20px", paddingLeft: "16px", borderLeft: "2px solid var(--green-pale)" }}
-              >
-                «В первый месяц отбила стоимость занятий, сидя в декрете. Спартак провёл за руку, когда было непонятно. Теперь знаю, на что способна.» — клиент, 2020-2026
-              </p>
-              <p
                 className="text-base leading-relaxed"
-                style={{ color: "var(--stone)", fontStyle: "normal", marginTop: "20px" }}
+                style={{ color: "var(--stone)", fontStyle: "normal", marginTop: "12px" }}
               >
                 Моя философия: йога подстраивается под человека, а не наоборот. Моя задача — дать инструменты, которые работают: убирают боль в спине, снижают тревожность, помогают фокусироваться. Всё без эзотерики, на основе практики.
               </p>
