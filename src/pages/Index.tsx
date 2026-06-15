@@ -100,13 +100,13 @@ export default function Index() {
             Корпоративная йога
           </p>
           <h1
-            className="font-display fade-up-delay-2 text-5xl md:text-7xl font-light leading-tight mb-6"
-            style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+            className="font-display fade-up-delay-2 text-5xl md:text-7xl font-normal leading-tight mb-6"
+            style={{ color: "var(--green-deep)", fontStyle: "normal" }}
           >
             Йога на ваше<br />мероприятие
           </h1>
           <p
-            className="fade-up-delay-3 text-lg md:text-xl font-light mb-10 max-w-xl mx-auto"
+            className="fade-up-delay-3 text-lg md:text-xl font-normal mb-10 max-w-xl mx-auto"
             style={{ color: "var(--stone)" }}
           >
             Приезжаю и провожу практику для гостей.<br />Любой формат, любая площадка.
@@ -136,8 +136,8 @@ export default function Index() {
           <div className="text-center mb-16">
             <p className="section-label mb-3">Форматы</p>
             <h2
-              className="font-display text-4xl md:text-5xl font-light"
-              style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+              className="font-display text-4xl md:text-5xl font-normal"
+              style={{ color: "var(--green-deep)", fontStyle: "normal" }}
             >
               Под любой повод
             </h2>
@@ -171,7 +171,7 @@ export default function Index() {
                 </p>
                 <h3
                   className="font-display text-2xl font-normal leading-snug"
-                  style={{ color: i === 1 ? "var(--cream)" : "var(--green-deep)", fontStyle: "italic" }}
+                  style={{ color: i === 1 ? "var(--cream)" : "var(--green-deep)", fontStyle: "normal" }}
                 >
                   {s.title}
                 </h3>
@@ -192,8 +192,8 @@ export default function Index() {
         <div className="max-w-2xl mx-auto text-center">
           <p className="section-label mb-4">Что даёт йога</p>
           <h2
-            className="font-display text-4xl md:text-5xl font-light mb-12"
-            style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+            className="font-display text-4xl md:text-5xl font-normal mb-12"
+            style={{ color: "var(--green-deep)", fontStyle: "normal" }}
           >
             Я не гуру и не обещаю чудес
           </h2>
@@ -242,24 +242,17 @@ export default function Index() {
             <div className="text-center md:text-left">
               <p className="section-label mb-3">О тренере</p>
               <h2
-                className="font-display text-4xl md:text-5xl font-light leading-snug mb-2"
-                style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+                className="font-display text-4xl md:text-5xl font-normal leading-snug mb-2"
+                style={{ color: "var(--green-deep)", fontStyle: "normal" }}
               >
                 Захаров Спартак<br />Михайлович
               </h2>
               <span className="leaf-divider md:ml-0 mb-5 block" style={{ margin: "12px 0" }} />
-              <p className="text-lg leading-relaxed mb-4" style={{ color: "var(--stone)" }}>
-                10+ лет личной практики йоги.
-              </p>
-              <p className="text-base leading-relaxed mb-5" style={{ color: "var(--stone)" }}>
-                Подстраиваюсь под аудиторию: работаю с новичками и опытными практиками,
-                с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
-              </p>
-              <p className="text-sm mb-3" style={{ color: "var(--stone)", opacity: 0.7 }}>
-                Проводил практики на крупнейших российских фестивалях:
+              <p className="text-base font-medium mb-4" style={{ color: "var(--green-deep)" }}>
+                10 лет преподавания · Участник крупнейших российских фестивалей
               </p>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-5">
-                {["Дикая Мята", "Йога Журнал — Равновесие", "Фестиваль Сказка", "Систо (Ленинградская обл.)", "Чилаут Пленет"].map((f) => (
+                {["Дикая Мята", "Равновесие", "Сказка", "Solar Systo", "ChillOutPlanet", "Sun Spirit Festival", "Архстояние", "TRIP MUSIC FEST"].map((f) => (
                   <span
                     key={f}
                     className="text-xs px-3 py-1.5 rounded-full"
@@ -269,9 +262,12 @@ export default function Index() {
                   </span>
                 ))}
               </div>
+              <p className="text-base leading-relaxed mb-5" style={{ color: "var(--stone)" }}>
+                Работаю с новичками и опытными практиками, с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
+              </p>
               <p
                 className="text-base leading-relaxed"
-                style={{ color: "var(--stone)", fontStyle: "italic" }}
+                style={{ color: "var(--stone)", fontStyle: "normal" }}
               >
                 Моя философия: йога подстраивается под человека, а не наоборот. Моя задача — дать инструменты, которые работают: убирают боль в спине, снижают тревожность, помогают фокусироваться. Всё без эзотерики, на основе практики.
               </p>
@@ -286,8 +282,8 @@ export default function Index() {
           <div className="text-center mb-12">
             <p className="section-label mb-3">Заявка</p>
             <h2
-              className="font-display text-4xl md:text-5xl font-light"
-              style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+              className="font-display text-4xl md:text-5xl font-normal"
+              style={{ color: "var(--green-deep)", fontStyle: "normal" }}
             >
               Обсудим ваше мероприятие
             </h2>
@@ -300,8 +296,8 @@ export default function Index() {
             >
               <Icon name="CheckCircle" size={48} className="mx-auto mb-4" style={{ color: "var(--green-mid)" }} />
               <h3
-                className="font-display text-3xl font-light mb-2"
-                style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+                className="font-display text-3xl font-normal mb-2"
+                style={{ color: "var(--green-deep)", fontStyle: "normal" }}
               >
                 Спасибо!
               </h3>
@@ -360,8 +356,8 @@ export default function Index() {
           <div className="text-center mb-12">
             <p className="section-label mb-3">FAQ</p>
             <h2
-              className="font-display text-4xl font-light"
-              style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+              className="font-display text-4xl font-normal"
+              style={{ color: "var(--green-deep)", fontStyle: "normal" }}
             >
               Частые вопросы
             </h2>
@@ -402,8 +398,8 @@ export default function Index() {
       <footer className="py-14 px-6" style={{ background: "var(--green-deep)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h3
-            className="font-display text-3xl font-light mb-8"
-            style={{ color: "var(--cream)", fontStyle: "italic" }}
+            className="font-display text-3xl font-normal mb-8"
+            style={{ color: "var(--cream)", fontStyle: "normal" }}
           >
             Йога на ваше мероприятие
           </h3>
@@ -442,7 +438,7 @@ export default function Index() {
           >
             Обсудить мероприятие
           </button>
-          <p className="mt-8 text-sm" style={{ color: "rgba(212,232,204,0.6)", fontStyle: "italic" }}>
+          <p className="mt-8 text-sm" style={{ color: "rgba(212,232,204,0.6)", fontStyle: "normal" }}>
             Йога без гуру, без эзотерики, без надрыва.<br />Просто — чтобы телу было легко, а в голове — ясно.
           </p>
           <p className="mt-4 text-xs" style={{ color: "rgba(212,232,204,0.3)" }}>
