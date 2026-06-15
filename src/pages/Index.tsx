@@ -95,7 +95,7 @@ export default function Index() {
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden" style={{ background: "var(--cream)" }}>
 
-        <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto px-6 py-6 text-center">
           <p className="section-label fade-up-delay-1 mb-5">
             Корпоративная йога
           </p>
@@ -117,8 +117,8 @@ export default function Index() {
             </button>
             <a
               href="tel:+79969971527"
-              className="text-sm transition-opacity hover:opacity-70"
-              style={{ color: "var(--stone)", opacity: 0.65 }}
+              className="transition-opacity hover:opacity-70"
+              style={{ color: "#5a5a5a", fontSize: "16px" }}
             >
               или позвоните: +7 996 997 15 27
             </a>
@@ -177,7 +177,7 @@ export default function Index() {
                 </h3>
                 <p
                   className="text-sm leading-relaxed"
-                  style={{ color: i === 1 ? "rgba(247,245,239,0.75)" : "var(--stone)" }}
+                  style={{ color: i === 1 ? "rgba(247,245,239,0.9)" : "var(--stone)" }}
                 >
                   {s.desc}
                 </p>
@@ -188,7 +188,7 @@ export default function Index() {
       </section>
 
       {/* ── WHAT YOGA GIVES ── */}
-      <section className="py-24 px-6" style={{ background: "white" }}>
+      <section className="py-24 px-6" style={{ background: "var(--cream-dark)" }}>
         <div className="max-w-2xl mx-auto text-center">
           <p className="section-label mb-4">Что даёт йога</p>
           <h2
