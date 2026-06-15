@@ -140,7 +140,7 @@ export default function Index() {
                 className="btn-primary"
                 style={{ width: "180px", height: "48px", opacity: submitting ? 0.7 : 1 }}
               >
-                {submitting ? "Отправляю..." : "Отправить"}
+                {submitting ? "Отправляю..." : "Позвоните мне"}
               </button>
             </form>
             <p style={{ color: "var(--stone)", fontSize: "14px", marginTop: "10px" }}>
@@ -235,18 +235,20 @@ export default function Index() {
               { step: "03", title: "Осознанность — если захотите", text: "Без мистики, без эзотерики." },
             ].map(({ step, title, text }) => (
               <div key={step} className="flex items-start gap-6">
-                <span
-                  className="font-semibold tracking-widest pt-1 flex-shrink-0 w-8"
-                  style={{ color: "#2d4a1e", fontSize: "20px", fontWeight: 600 }}
-                >
-                  {step}
-                </span>
                 <div
-                  className="flex-1 pt-0.5 pb-8"
+                  className="flex-1 pb-8 flex gap-4 items-center"
                   style={{ borderBottom: step !== "03" ? "1px solid var(--green-pale)" : "none" }}
                 >
-                  <p className="font-medium text-lg mb-1" style={{ color: "var(--green-deep)" }}>{title}</p>
-                  <p className="text-base" style={{ color: "var(--stone)" }}>{text}</p>
+                  <span
+                    className="font-semibold tracking-widest flex-shrink-0 w-8"
+                    style={{ color: "#2d4a1e", fontSize: "20px", fontWeight: 600 }}
+                  >
+                    {step}
+                  </span>
+                  <div>
+                    <p className="font-medium text-lg mb-1" style={{ color: "var(--green-deep)" }}>{title}</p>
+                    <p className="text-base" style={{ color: "var(--stone)" }}>{text}</p>
+                  </div>
                 </div>
               </div>
             ))}
