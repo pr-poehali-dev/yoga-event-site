@@ -25,7 +25,7 @@ const scenarios = [
     tag: "Частное",
     title: "День рождения, девичник или частное событие",
     desc: "Спокойная, атмосферная практика для вашей компании. Создаём особенное настроение вместе.",
-    price: "от 12 000 ₽ за мероприятие",
+    price: "от 15 000 ₽ за мероприятие",
   },
 ];
 
@@ -114,25 +114,42 @@ export default function Index() {
           >
             Приезжаю и провожу практику для гостей.<br />Любой формат, любая площадка.
           </p>
-          <div className="fade-up-delay-4 flex flex-col items-center gap-3">
+          <div className="fade-up-delay-4 flex flex-col items-center">
             <button onClick={scrollToForm} className="btn-primary text-base px-8 py-4">
-              Обсудить мероприятие
+              Заказать йогу на мероприятие →
             </button>
-            <p style={{ color: "var(--stone)", fontSize: "14px", letterSpacing: "normal" }}>
+            <p style={{ color: "var(--stone)", fontSize: "14px", letterSpacing: "normal", marginTop: "8px" }}>
+              от 30 000 ₽ за выезд
+            </p>
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-row gap-3 items-center"
+              style={{ marginTop: "12px" }}
+            >
+              <input
+                className="form-input"
+                style={{ width: "280px", height: "51px", padding: "12px 16px" }}
+                placeholder="+7 ..."
+                required
+                value={form.phone}
+                onChange={e => setForm({ ...form, phone: e.target.value })}
+              />
+              <button
+                type="submit"
+                disabled={submitting}
+                className="btn-primary"
+                style={{ width: "200px", height: "51px", opacity: submitting ? 0.7 : 1 }}
+              >
+                {submitting ? "Отправляю..." : "Отправить"}
+              </button>
+            </form>
+            <p style={{ color: "var(--stone)", fontSize: "16px", letterSpacing: "normal", marginTop: "16px" }}>
               10 лет преподавания · 8 фестивалей · 100+ мероприятий
             </p>
-            <a
-              href="tel:+79969971527"
-              className="inline-flex items-center gap-2 transition-opacity hover:opacity-70"
-              style={{ color: "#2d4a1e", fontSize: "16px", fontWeight: 500 }}
-            >
-              <Icon name="Phone" size={16} />
-              или позвоните: +7 996 997 15 27
-            </a>
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce md:hidden">
           <Icon name="ChevronDown" size={28} style={{ color: "var(--green-mid)" }} />
         </div>
       </section>
@@ -302,8 +319,14 @@ export default function Index() {
                 Работаю с новичками и опытными практиками, с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
               </p>
               <p
+                className="leading-relaxed"
+                style={{ color: "#8a8a7a", fontSize: "14px", fontStyle: "italic", marginTop: "20px", paddingLeft: "16px", borderLeft: "2px solid var(--green-pale)" }}
+              >
+                «В первый месяц отбила стоимость занятий, сидя в декрете. Спартак провёл за руку, когда было непонятно. Теперь знаю, на что способна.» — клиент, 2020-2026
+              </p>
+              <p
                 className="text-base leading-relaxed"
-                style={{ color: "var(--stone)", fontStyle: "normal" }}
+                style={{ color: "var(--stone)", fontStyle: "normal", marginTop: "20px" }}
               >
                 Моя философия: йога подстраивается под человека, а не наоборот. Моя задача — дать инструменты, которые работают: убирают боль в спине, снижают тревожность, помогают фокусироваться. Всё без эзотерики, на основе практики.
               </p>
@@ -392,7 +415,7 @@ export default function Index() {
           <div className="text-center mb-12">
             <p className="section-label mb-3">FAQ</p>
             <h2
-              className="font-display text-4xl font-normal"
+              className="font-display text-4xl md:text-5xl font-normal"
               style={{ color: "var(--green-deep)", fontStyle: "normal" }}
             >
               Частые вопросы
@@ -431,15 +454,15 @@ export default function Index() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="py-14 px-6" style={{ background: "var(--green-deep)" }}>
+      <footer className="py-10 px-6" style={{ background: "var(--green-deep)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h3
-            className="font-display text-3xl font-normal mb-8"
+            className="font-display text-3xl font-normal mb-6"
             style={{ color: "var(--cream)", fontStyle: "normal" }}
           >
             Йога на ваше мероприятие
           </h3>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
             <a
               href="tel:+79969971527"
               className="flex items-center gap-2 text-sm transition-opacity hover:opacity-75"
@@ -474,10 +497,10 @@ export default function Index() {
           >
             Обсудить мероприятие
           </button>
-          <p className="mt-8 text-sm" style={{ color: "rgba(212,232,204,0.6)", fontStyle: "normal" }}>
+          <p className="mt-6 text-sm" style={{ color: "rgba(212,232,204,0.6)", fontStyle: "normal" }}>
             Йога без гуру, без эзотерики, без надрыва.<br />Просто — чтобы телу было легко, а в голове — ясно.
           </p>
-          <p className="mt-4 text-xs" style={{ color: "rgba(212,232,204,0.3)" }}>
+          <p className="mt-3 text-xs" style={{ color: "rgba(212,232,204,0.3)" }}>
             © 2026 yogaevent.ru
           </p>
         </div>
