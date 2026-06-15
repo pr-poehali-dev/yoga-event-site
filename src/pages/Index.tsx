@@ -99,9 +99,6 @@ export default function Index() {
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden" style={{ background: "var(--cream)" }}>
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 py-6 text-center">
-          <p className="section-label fade-up-delay-1 mb-5">
-            Корпоративная йога
-          </p>
           <h1
             className="font-display fade-up-delay-2 text-5xl md:text-7xl font-normal leading-tight mb-6"
             style={{ color: "var(--green-deep)", fontStyle: "normal" }}
@@ -115,10 +112,7 @@ export default function Index() {
             Приезжаю и провожу практику для гостей.<br />Любой формат, любая площадка.
           </p>
           <div className="fade-up-delay-4 flex flex-col items-center">
-            <button onClick={scrollToForm} className="btn-primary text-base px-8 py-4">
-              Заказать йогу на мероприятие →
-            </button>
-            <p style={{ color: "#8a8a7a", fontSize: "13px", marginTop: "8px", textAlign: "center" }}>
+            <p style={{ color: "#8a8a7a", fontSize: "13px", textAlign: "center" }}>
               Стоимость обсуждается под ваш формат
             </p>
             <form
@@ -138,9 +132,9 @@ export default function Index() {
                 type="submit"
                 disabled={submitting}
                 className="btn-primary"
-                style={{ width: "180px", height: "48px", opacity: submitting ? 0.7 : 1 }}
+                style={{ width: "220px", height: "48px", opacity: submitting ? 0.7 : 1 }}
               >
-                {submitting ? "Отправляю..." : "Позвоните мне"}
+                {submitting ? "Отправляю..." : "Заказать йогу на мероприятие"}
               </button>
             </form>
             <p style={{ color: "var(--stone)", fontSize: "14px", marginTop: "10px" }}>
