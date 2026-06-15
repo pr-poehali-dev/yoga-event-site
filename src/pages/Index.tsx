@@ -11,18 +11,21 @@ const scenarios = [
     tag: "Корпоратив",
     title: "Тимбилдинг, корпоратив или праздник",
     desc: "Необычный формат, который запомнят гости. Йога объединяет команду лучше, чем любой командный квест.",
+    price: "Стоимость обсуждается под ваш формат",
   },
   {
     icon: "Tent",
     tag: "Фестиваль",
     title: "Фестиваль, конференция или открытое мероприятие",
     desc: "Выхожу на сцену или на полянку — веду практику для любого уровня. Без специальной подготовки.",
+    price: "от 30 000 ₽ за выезд",
   },
   {
     icon: "Sparkles",
     tag: "Частное",
     title: "День рождения, девичник или частное событие",
     desc: "Спокойная, атмосферная практика для вашей компании. Создаём особенное настроение вместе.",
+    price: "от 12 000 ₽ за мероприятие",
   },
 ];
 
@@ -115,11 +118,15 @@ export default function Index() {
             <button onClick={scrollToForm} className="btn-primary text-base px-8 py-4">
               Обсудить мероприятие
             </button>
+            <p style={{ color: "var(--stone)", fontSize: "14px", letterSpacing: "normal" }}>
+              10 лет преподавания · 8 фестивалей · 100+ мероприятий
+            </p>
             <a
               href="tel:+79969971527"
-              className="transition-opacity hover:opacity-70"
-              style={{ color: "#5a5a5a", fontSize: "16px" }}
+              className="inline-flex items-center gap-2 transition-opacity hover:opacity-70"
+              style={{ color: "#2d4a1e", fontSize: "16px", fontWeight: 500 }}
             >
+              <Icon name="Phone" size={16} />
               или позвоните: +7 996 997 15 27
             </a>
           </div>
@@ -181,6 +188,12 @@ export default function Index() {
                 >
                   {s.desc}
                 </p>
+                <p
+                  className="mt-auto pt-2 font-semibold"
+                  style={{ fontSize: "13px", color: i === 1 ? "var(--green-pale)" : "#2d4a1e" }}
+                >
+                  {s.price}
+                </p>
               </div>
             ))}
           </div>
@@ -195,7 +208,7 @@ export default function Index() {
             className="font-display text-4xl md:text-5xl font-normal mb-12"
             style={{ color: "var(--green-deep)", fontStyle: "normal" }}
           >
-            Я не гуру и не обещаю чудес
+            Без эзотерики. Просто работа с телом
           </h2>
           <div className="flex flex-col gap-8 text-left">
             {[
@@ -220,6 +233,29 @@ export default function Index() {
               </div>
             ))}
           </div>
+
+          {!submitted && (
+            <form
+              onSubmit={handleSubmit}
+              className="mt-12 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+            >
+              <input
+                className="form-input flex-1"
+                placeholder="+7 ..."
+                required
+                value={form.phone}
+                onChange={e => setForm({ ...form, phone: e.target.value })}
+              />
+              <button
+                type="submit"
+                disabled={submitting}
+                className="btn-primary"
+                style={{ opacity: submitting ? 0.7 : 1 }}
+              >
+                {submitting ? "Отправляю..." : "Отправить заявку"}
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
