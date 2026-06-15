@@ -43,6 +43,14 @@ const faqs = [
     q: "Нужно ли готовиться?",
     a: "Просто приходите в удобной одежде. Коврики и всё необходимое можно обсудить заранее.",
   },
+  {
+    q: "Чем йога отличается от фитнеса?",
+    a: "В фитнесе вы просто двигаетесь. В йоге учитесь чувствовать тело, управлять дыханием и замечать, как меняется состояние. Результат — не только тело, но и спокойствие.",
+  },
+  {
+    q: "Нужно ли во что-то верить?",
+    a: "Нет. Йога — про здоровье тела и ясность ума. Всё что я даю — работает независимо от ваших убеждений.",
+  },
 ];
 
 export default function Index() {
@@ -85,25 +93,13 @@ export default function Index() {
     <div className="min-h-screen" style={{ background: "var(--cream)", fontFamily: "'Golos Text', sans-serif" }}>
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={HERO_IMAGE}
-            alt="Йога на мероприятие"
-            className="w-full h-full object-cover"
-          />
-          <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(to bottom, rgba(20,36,14,0.55) 0%, rgba(20,36,14,0.35) 50%, rgba(20,36,14,0.7) 100%)" }}
-          />
-        </div>
-
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden" style={{ background: "var(--cream)" }}>
         {/* Телефон в шапке */}
         <div className="absolute top-0 left-0 right-0 z-20 flex justify-end px-6 pt-5">
           <a
             href="tel:+79969971527"
-            className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80"
-            style={{ color: "var(--cream)", background: "rgba(20,36,14,0.45)", backdropFilter: "blur(6px)", borderRadius: "999px", padding: "8px 18px", border: "1px solid rgba(255,255,255,0.15)" }}
+            className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70"
+            style={{ color: "var(--green-deep)", background: "white", borderRadius: "999px", padding: "8px 18px", border: "1px solid rgba(45,74,30,0.15)", boxShadow: "0 1px 6px rgba(45,74,30,0.08)" }}
           >
             <Icon name="Phone" size={14} />
             +7 996 997 15 27
@@ -111,18 +107,18 @@ export default function Index() {
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 py-32 text-center">
-          <p className="section-label fade-up-delay-1 mb-5" style={{ color: "var(--green-pale)" }}>
+          <p className="section-label fade-up-delay-1 mb-5">
             Корпоративная йога
           </p>
           <h1
             className="font-display fade-up-delay-2 text-5xl md:text-7xl font-light leading-tight mb-6"
-            style={{ color: "var(--cream)", fontStyle: "italic" }}
+            style={{ color: "var(--green-deep)", fontStyle: "italic" }}
           >
             Йога на ваше<br />мероприятие
           </h1>
           <p
             className="fade-up-delay-3 text-lg md:text-xl font-light mb-10 max-w-xl mx-auto"
-            style={{ color: "rgba(247,245,239,0.85)" }}
+            style={{ color: "var(--stone)" }}
           >
             Приезжаю и провожу практику для гостей.<br />Любой формат, любая площадка.
           </p>
@@ -134,7 +130,7 @@ export default function Index() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-          <Icon name="ChevronDown" size={28} style={{ color: "rgba(247,245,239,0.6)" }} />
+          <Icon name="ChevronDown" size={28} style={{ color: "var(--green-mid)" }} />
         </div>
       </section>
 
@@ -189,6 +185,42 @@ export default function Index() {
                 >
                   {s.desc}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHAT YOGA GIVES ── */}
+      <section className="py-24 px-6" style={{ background: "white" }}>
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="section-label mb-4">Что даёт йога</p>
+          <h2
+            className="font-display text-4xl md:text-5xl font-light mb-12"
+            style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+          >
+            Я не гуру и не обещаю чудес
+          </h2>
+          <div className="flex flex-col gap-8 text-left">
+            {[
+              { step: "01", title: "Крепкое тело", text: "Гибкость, сила, выносливость без травм." },
+              { step: "02", title: "Устойчивый ум", text: "Дыхание, концентрация, снятие стресса за 5 минут." },
+              { step: "03", title: "Осознанность — если захотите", text: "Без мистики, без эзотерики." },
+            ].map(({ step, title, text }) => (
+              <div key={step} className="flex items-start gap-6">
+                <span
+                  className="text-xs font-semibold tracking-widest pt-1 flex-shrink-0 w-8"
+                  style={{ color: "var(--green-mid)" }}
+                >
+                  {step}
+                </span>
+                <div
+                  className="flex-1 pt-0.5 pb-8"
+                  style={{ borderBottom: step !== "03" ? "1px solid var(--green-pale)" : "none" }}
+                >
+                  <p className="font-medium text-lg mb-1" style={{ color: "var(--green-deep)" }}>{title}</p>
+                  <p className="text-base" style={{ color: "var(--stone)" }}>{text}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -328,7 +360,7 @@ export default function Index() {
                 Подстраиваюсь под аудиторию: работаю с новичками и опытными практиками,
                 с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
               </p>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-5">
                 {["Дикая Мята", "Равновесие", "Сказка", "Систо", "Чилаут Пленет"].map((f) => (
                   <span
                     key={f}
@@ -339,6 +371,12 @@ export default function Index() {
                   </span>
                 ))}
               </div>
+              <p
+                className="text-base leading-relaxed"
+                style={{ color: "var(--stone)", fontStyle: "italic" }}
+              >
+                Моя философия: йога подстраивается под человека, а не наоборот. Моя задача — дать инструменты, которые работают: убирают боль в спине, снижают тревожность, помогают фокусироваться. Всё без эзотерики, на основе практики.
+              </p>
             </div>
           </div>
         </div>
@@ -432,7 +470,10 @@ export default function Index() {
           >
             Обсудить мероприятие
           </button>
-          <p className="mt-10 text-xs" style={{ color: "rgba(212,232,204,0.4)" }}>
+          <p className="mt-8 text-sm" style={{ color: "rgba(212,232,204,0.6)", fontStyle: "italic" }}>
+            Йога без гуру, без эзотерики, без надрыва.<br />Просто — чтобы телу было легко, а в голове — ясно.
+          </p>
+          <p className="mt-4 text-xs" style={{ color: "rgba(212,232,204,0.3)" }}>
             © 2026 yogaevent.ru
           </p>
         </div>
