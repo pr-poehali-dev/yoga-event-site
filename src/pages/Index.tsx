@@ -94,19 +94,8 @@ export default function Index() {
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden" style={{ background: "var(--cream)" }}>
-        {/* Телефон в шапке */}
-        <div className="absolute top-0 left-0 right-0 z-20 flex justify-end px-6 pt-5">
-          <a
-            href="tel:+79969971527"
-            className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70"
-            style={{ color: "var(--green-deep)", background: "white", borderRadius: "999px", padding: "8px 18px", border: "1px solid rgba(45,74,30,0.15)", boxShadow: "0 1px 6px rgba(45,74,30,0.08)" }}
-          >
-            <Icon name="Phone" size={14} />
-            +7 996 997 15 27
-          </a>
-        </div>
 
-        <div className="relative z-10 max-w-3xl mx-auto px-6 py-32 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 text-center">
           <p className="section-label fade-up-delay-1 mb-5">
             Корпоративная йога
           </p>
@@ -122,10 +111,17 @@ export default function Index() {
           >
             Приезжаю и провожу практику для гостей.<br />Любой формат, любая площадка.
           </p>
-          <div className="fade-up-delay-4">
+          <div className="fade-up-delay-4 flex flex-col items-center gap-3">
             <button onClick={scrollToForm} className="btn-primary text-base px-8 py-4">
               Обсудить мероприятие
             </button>
+            <a
+              href="tel:+79969971527"
+              className="text-sm transition-opacity hover:opacity-70"
+              style={{ color: "var(--stone)", opacity: 0.65 }}
+            >
+              или позвоните: +7 996 997 15 27
+            </a>
           </div>
         </div>
 
