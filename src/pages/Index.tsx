@@ -223,29 +223,59 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── FESTIVALS ── */}
-      <section className="py-20 px-6" style={{ background: "var(--green-deep)" }}>
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="section-label mb-4" style={{ color: "var(--green-pale)" }}>Опыт</p>
-          <h2
-            className="font-display text-4xl md:text-5xl font-light mb-8"
-            style={{ color: "var(--cream)", fontStyle: "italic" }}
-          >
-            Крупнейшие российские фестивали
-          </h2>
-          <p className="text-base mb-8" style={{ color: "rgba(212,232,204,0.75)" }}>
-            Проводил практики на крупнейших российских фестивалях:
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {["Дикая Мята", "Йога Журнал — Равновесие", "Фестиваль Сказка", "Систо (Ленинградская обл.)", "Чилаут Пленет"].map((fest) => (
-              <span
-                key={fest}
-                className="text-sm font-medium px-5 py-2.5 rounded-full"
-                style={{ background: "rgba(255,255,255,0.1)", color: "var(--cream)", border: "1px solid rgba(255,255,255,0.18)" }}
+      {/* ── ABOUT ── */}
+      <section className="py-20 px-6" style={{ background: "var(--cream-dark)" }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-shrink-0">
+              <div
+                className="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden"
+                style={{ boxShadow: "0 8px 32px rgba(45,74,30,0.18)", border: "4px solid var(--green-pale)" }}
               >
-                {fest}
-              </span>
-            ))}
+                <img
+                  src={TRAINER_PHOTO}
+                  alt="Захаров Спартак Михайлович"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+            <div className="text-center md:text-left">
+              <p className="section-label mb-3">О тренере</p>
+              <h2
+                className="font-display text-4xl md:text-5xl font-light leading-snug mb-2"
+                style={{ color: "var(--green-deep)", fontStyle: "italic" }}
+              >
+                Захаров Спартак<br />Михайлович
+              </h2>
+              <span className="leaf-divider md:ml-0 mb-5 block" style={{ margin: "12px 0" }} />
+              <p className="text-lg leading-relaxed mb-4" style={{ color: "var(--stone)" }}>
+                10+ лет личной практики йоги.
+              </p>
+              <p className="text-base leading-relaxed mb-5" style={{ color: "var(--stone)" }}>
+                Подстраиваюсь под аудиторию: работаю с новичками и опытными практиками,
+                с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
+              </p>
+              <p className="text-sm mb-3" style={{ color: "var(--stone)", opacity: 0.7 }}>
+                Проводил практики на крупнейших российских фестивалях:
+              </p>
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-5">
+                {["Дикая Мята", "Йога Журнал — Равновесие", "Фестиваль Сказка", "Систо (Ленинградская обл.)", "Чилаут Пленет"].map((f) => (
+                  <span
+                    key={f}
+                    className="text-xs px-3 py-1.5 rounded-full"
+                    style={{ background: "var(--green-pale)", color: "var(--green-deep)", fontWeight: 500 }}
+                  >
+                    {f}
+                  </span>
+                ))}
+              </div>
+              <p
+                className="text-base leading-relaxed"
+                style={{ color: "var(--stone)", fontStyle: "italic" }}
+              >
+                Моя философия: йога подстраивается под человека, а не наоборот. Моя задача — дать инструменты, которые работают: убирают боль в спине, снижают тревожность, помогают фокусироваться. Всё без эзотерики, на основе практики.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -321,60 +351,6 @@ export default function Index() {
               </button>
             </form>
           )}
-        </div>
-      </section>
-
-      {/* ── ABOUT ── */}
-      <section className="py-20 px-6" style={{ background: "var(--cream-dark)" }}>
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-shrink-0">
-              <div
-                className="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden"
-                style={{ boxShadow: "0 8px 32px rgba(45,74,30,0.18)", border: "4px solid var(--green-pale)" }}
-              >
-                <img
-                  src={TRAINER_PHOTO}
-                  alt="Захаров Спартак Михайлович"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-            </div>
-            <div className="text-center md:text-left">
-              <p className="section-label mb-3">О тренере</p>
-              <h2
-                className="font-display text-4xl md:text-5xl font-light leading-snug mb-2"
-                style={{ color: "var(--green-deep)", fontStyle: "italic" }}
-              >
-                Захаров Спартак<br />Михайлович
-              </h2>
-              <span className="leaf-divider md:ml-0 mb-5 block" style={{ margin: "12px 0" }} />
-              <p className="text-lg leading-relaxed mb-4" style={{ color: "var(--stone)" }}>
-                10+ лет личной практики йоги. Участник крупнейших российских фестивалей.
-              </p>
-              <p className="text-base leading-relaxed mb-5" style={{ color: "var(--stone)" }}>
-                Подстраиваюсь под аудиторию: работаю с новичками и опытными практиками,
-                с камерными группами и большими залами. Создаю атмосферу — не просто провожу занятие.
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-5">
-                {["Дикая Мята", "Равновесие", "Сказка", "Систо", "Чилаут Пленет"].map((f) => (
-                  <span
-                    key={f}
-                    className="text-xs px-3 py-1.5 rounded-full"
-                    style={{ background: "var(--green-pale)", color: "var(--green-deep)", fontWeight: 500 }}
-                  >
-                    {f}
-                  </span>
-                ))}
-              </div>
-              <p
-                className="text-base leading-relaxed"
-                style={{ color: "var(--stone)", fontStyle: "italic" }}
-              >
-                Моя философия: йога подстраивается под человека, а не наоборот. Моя задача — дать инструменты, которые работают: убирают боль в спине, снижают тревожность, помогают фокусироваться. Всё без эзотерики, на основе практики.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
