@@ -100,25 +100,21 @@ export default function Index() {
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 py-6 text-center">
           <h1
-            className="font-display fade-up-delay-2 text-5xl md:text-7xl font-normal leading-tight mb-6"
-            style={{ color: "var(--green-deep)", fontStyle: "normal" }}
+            className="font-display fade-up-delay-2 text-5xl md:text-7xl font-normal leading-tight"
+            style={{ color: "var(--green-deep)", fontStyle: "normal", marginBottom: "24px" }}
           >
             Йога на ваше<br />мероприятие
           </h1>
           <p
-            className="fade-up-delay-3 text-lg md:text-xl font-normal mb-6 max-w-xl mx-auto"
-            style={{ color: "var(--stone)" }}
+            className="fade-up-delay-3 text-lg md:text-xl font-normal max-w-xl mx-auto"
+            style={{ color: "var(--stone)", marginBottom: "32px" }}
           >
             Приезжаю и провожу практику для гостей.<br />Любой формат, любая площадка.
           </p>
           <div className="fade-up-delay-4 flex flex-col items-center">
-            <p style={{ color: "#8a8a7a", fontSize: "13px", textAlign: "center" }}>
-              Стоимость обсуждается под ваш формат
-            </p>
             <form
               onSubmit={handleSubmit}
               className="flex flex-col sm:flex-row gap-2 items-center"
-              style={{ marginTop: "12px" }}
             >
               <input
                 className="form-input"
@@ -132,12 +128,12 @@ export default function Index() {
                 type="submit"
                 disabled={submitting}
                 className="btn-primary"
-                style={{ width: "220px", height: "48px", opacity: submitting ? 0.7 : 1 }}
+                style={{ width: "260px", height: "48px", opacity: submitting ? 0.7 : 1 }}
               >
                 {submitting ? "Отправляю..." : "Заказать йогу на мероприятие"}
               </button>
             </form>
-            <p style={{ color: "var(--stone)", fontSize: "14px", marginTop: "10px" }}>
+            <p style={{ color: "var(--stone)", fontSize: "14px", marginTop: "16px" }}>
               10 лет преподавания · 8 фестивалей · 100+ мероприятий
             </p>
           </div>
