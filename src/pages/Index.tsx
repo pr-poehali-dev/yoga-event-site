@@ -114,11 +114,11 @@ export default function Index() {
           <div className="fade-up-delay-4 flex flex-col items-center">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-3 w-full"
-              style={{ maxWidth: "340px" }}
+              className="flex flex-row gap-2 w-full items-center"
+              style={{ maxWidth: "420px" }}
             >
               <input
-                className="form-input text-center"
+                className="form-input flex-1"
                 style={{ height: "52px", padding: "12px 16px" }}
                 placeholder="Ваш телефон, +7 ..."
                 required
@@ -128,19 +128,19 @@ export default function Index() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="btn-primary inline-flex items-center justify-center gap-2 w-full whitespace-nowrap"
+                className="btn-primary inline-flex items-center justify-center gap-2 whitespace-nowrap flex-shrink-0"
                 style={{ height: "52px", opacity: submitting ? 0.7 : 1 }}
               >
                 {submitting ? "Отправляю..." : (
                   <>
-                    Заказать йогу на мероприятие
+                    Обсудить
                     <Icon name="ArrowRight" size={18} />
                   </>
                 )}
               </button>
             </form>
             <p style={{ color: "var(--stone)", fontSize: "14px", marginTop: "16px" }}>
-              10 лет преподавания · 8 фестивалей · 100+ мероприятий
+              10 лет · 100+ мероприятий
             </p>
           </div>
         </div>
