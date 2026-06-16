@@ -140,7 +140,7 @@ export default function Index() {
               </button>
             </form>
             <p style={{ color: "var(--stone)", fontSize: "14px", marginTop: "16px" }}>
-              10 лет · 100+ мероприятий
+              10 лет преподавания · 100+ проведенных мероприятий
             </p>
           </div>
         </div>
