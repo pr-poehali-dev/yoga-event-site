@@ -114,12 +114,13 @@ export default function Index() {
           <div className="fade-up-delay-4 flex flex-col items-center">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-2 items-center"
+              className="flex flex-col gap-3 w-full"
+              style={{ maxWidth: "340px" }}
             >
               <input
-                className="form-input"
-                style={{ width: "280px", height: "48px", padding: "12px 16px" }}
-                placeholder="+7 ..."
+                className="form-input text-center"
+                style={{ height: "52px", padding: "12px 16px" }}
+                placeholder="Ваш телефон, +7 ..."
                 required
                 value={form.phone}
                 onChange={e => setForm({ ...form, phone: e.target.value })}
@@ -127,10 +128,15 @@ export default function Index() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="btn-primary"
-                style={{ width: "260px", height: "48px", opacity: submitting ? 0.7 : 1 }}
+                className="btn-primary inline-flex items-center justify-center gap-2 w-full whitespace-nowrap"
+                style={{ height: "52px", opacity: submitting ? 0.7 : 1 }}
               >
-                {submitting ? "Отправляю..." : "Заказать йогу на мероприятие"}
+                {submitting ? "Отправляю..." : (
+                  <>
+                    Заказать йогу на мероприятие
+                    <Icon name="ArrowRight" size={18} />
+                  </>
+                )}
               </button>
             </form>
             <p style={{ color: "var(--stone)", fontSize: "14px", marginTop: "16px" }}>
